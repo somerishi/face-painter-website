@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const featuredGalleries = await getCollection('galleries', ({ data }) => data.featured);
+const recentPosts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+---
+
+<BaseLayout title="Rainbow Faces - Professional Face Painting">
+  <!-- Hero Section -->
+  <section class="relative py-20 md:py-32 overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="font-display text-5xl md:text-7xl mb-6 animate-fade-in">
+          Transform Faces into <span class="gradient-text">Works of Art</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 mb-8 animate-fade-in animation-delay-200">
+          Professional face painting for parties, events, and celebrations
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-400">
+          <a href="/contact" class="btn-primary">Book Your Event</a>
+          <a href="/gallery" class="btn-secondary">View Gallery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20 bg-white/50">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title gradient-text mb-12">What We Offer</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card p-8 text-center transform hover:scale-105 transition-transform">
+          <div class="text-6xl mb-4">🎂</div>
+          <h3 class="font-heading text-2xl mb-3">Birthday Parties</h3>
+          <p class="text-gray-600">Make your child's special day unforgettable with magical face painting</p>
+        </div>
+        
+        <div class="card p-8 text-center transform hover:scale-105 transition-transform animation-delay-200">
+          <div class="text-6xl mb-4">🏢</div>
+          <h3 class="font-heading text-2xl mb-3">Corporate Events</h3>
+          <p class="text-gray-600">Add fun and creativity to your company gatherings and team building events</p>
+        </div>
+        
+        <div class="card p-8 text-center transform hover:scale-105 transition-transform animation-delay-400">
+          <div class="text-6xl mb-4">🎪</div>
+          <h3 class="font-heading text-2xl mb-3">Festivals & Fairs</h3>
+          <p class="text-gray-600">Bring joy to community events with professional face painting entertainment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Gallery -->
+  {featuredGalleries.length > 0 && (
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title gradient-text mb-4">Featured Work</h2>
+        <p class="text-center text-gray-600 mb-12 text-lg">Check out some of our favorite creations</p>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          {featuredGalleries.slice(0, 3).map((gallery) => (
+            <a href={`/gallery/${gallery.id}`} class="card group">
+              <div class="aspect-square overflow-hidden">
+                <img 
+                  src={gallery.data.coverImage} 
+                  alt={gallery.data.title}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="font-heading text-xl mb-2 group-hover:text-primary-pink transition-colors">{gallery.data.title}</h3>
+                <p class="text-gray-600 text-sm">{gallery.data.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="/gallery" class="btn-primary">View Full Gallery</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Recent Blog Posts -->
+  {recentPosts.length > 0 && (
+    <section class="py-20 bg-white/50">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title gradient-text mb-4">Latest from the Blog</h2>
+        <p class="text-center text-gray-600 mb-12 text-lg">Tips, tricks, and stories from our face painting adventures</p>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          {recentPosts.map((post) => (
+            <a href={`/blog/${post.slug}`} class="card group">
+              {post.data.image && (
+                <div class="aspect-video overflow-hidden">
+                  <img 
+                    src={post.data.image} 
+                    alt={post.data.title}
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              )}
+              <div class="p-6">
+                <time class="text-sm text-primary-pink font-semibold">
+                  {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+                <h3 class="font-heading text-xl mt-2 mb-2 group-hover:text-primary-pink transition-colors">{post.data.title}</h3>
+                <p class="text-gray-600 text-sm">{post.data.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="/blog" class="btn-primary">Read More Posts</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="card p-12 text-center bg-gradient-to-br from-primary-pink/10 via-primary-purple/10 to-primary-blue/10">
+        <h2 class="font-display text-4xl md:text-5xl mb-4">Ready to Add Color to Your Event?</h2>
+        <p class="text-xl text-gray-600 mb-8">Let's make your next celebration unforgettable!</p>
+        <a href="/contact" class="btn-primary text-lg">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fade-in {
+      animation: fade-in 0.8s ease-out forwards;
+      opacity: 0;
+    }
+  </style>
+</BaseLayout>

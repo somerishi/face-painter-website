@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About - Rainbow Faces">
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <h1 class="font-display text-5xl md:text-6xl text-center gradient-text mb-4">About Rainbow Faces</h1>
+      <p class="text-center text-gray-600 mb-16 text-lg max-w-2xl mx-auto">
+        Bringing joy, creativity, and color to events across the UK
+      </p>
+
+      <div class="max-w-4xl mx-auto">
+        <!-- Story Section -->
+        <div class="card p-8 md:p-12 mb-12">
+          <h2 class="font-heading text-3xl mb-6 text-center">Our Story</h2>
+          <div class="prose prose-lg max-w-none text-gray-700 space-y-4">
+            <p>
+              Rainbow Faces was born from a passion for art and a love of bringing smiles to children's faces. 
+              What started as face painting at a local charity event has grown into a thriving business serving 
+              families and organizations across the UK.
+            </p>
+            <p>
+              With over [X] years of experience and thousands of happy clients, we've painted everything from 
+              butterflies and superheroes to elaborate fantasy creatures and custom designs. Each face is a 
+              canvas, and each event is an opportunity to create magic.
+            </p>
+            <p>
+              We believe that face painting is more than just entertainment—it's about transformation, 
+              imagination, and creating memorable experiences that last long after the paint washes off.
+            </p>
+          </div>
+        </div>
+
+        <!-- Values Section -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="card p-8 text-center">
+            <div class="text-5xl mb-4">🎨</div>
+            <h3 class="font-heading text-xl mb-3">Quality</h3>
+            <p class="text-gray-600">We use only professional-grade, hypoallergenic paints that are safe for all skin types</p>
+          </div>
+
+          <div class="card p-8 text-center">
+            <div class="text-5xl mb-4">💝</div>
+            <h3 class="font-heading text-xl mb-3">Care</h3>
+            <p class="text-gray-600">Every client receives personalized attention and designs tailored to their preferences</p>
+          </div>
+
+          <div class="card p-8 text-center">
+            <div class="text-5xl mb-4">✨</div>
+            <h3 class="font-heading text-xl mb-3">Creativity</h3>
+            <p class="text-gray-600">From classic designs to custom creations, we bring artistic vision to life</p>
+          </div>
+        </div>
+
+        <!-- What We Do -->
+        <div class="card p-8 md:p-12 mb-12">
+          <h2 class="font-heading text-3xl mb-6 text-center">What We Do</h2>
+          <div class="space-y-6 text-gray-700">
+            <div class="flex items-start">
+              <span class="text-2xl mr-4">🎂</span>
+              <div>
+                <h3 class="font-heading text-xl mb-2">Birthday Parties</h3>
+                <p>Make your child's birthday unforgettable with themed face painting that matches their party perfectly.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <span class="text-2xl mr-4">🏢</span>
+              <div>
+                <h3 class="font-heading text-xl mb-2">Corporate Events</h3>
+                <p>Add fun and engagement to company gatherings, team building events, and family days.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <span class="text-2xl mr-4">🎪</span>
+              <div>
+                <h3 class="font-heading text-xl mb-2">Festivals & Community Events</h3>
+                <p>Bring professional entertainment to fairs, festivals, and community celebrations of any size.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <span class="text-2xl mr-4">💍</span>
+              <div>
+                <h3 class="font-heading text-xl mb-2">Weddings & Special Occasions</h3>
+                <p>Add a unique touch to your special day with elegant face painting for guests of all ages.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <span class="text-2xl mr-4">🏫</span>
+              <div>
+                <h3 class="font-heading text-xl mb-2">School Events</h3>
+                <p>Perfect for school fairs, fundraisers, and end-of-year celebrations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Safety & Materials -->
+        <div class="card p-8 md:p-12 bg-gradient-to-br from-primary-pink/10 via-primary-purple/10 to-primary-blue/10">
+          <h2 class="font-heading text-3xl mb-6 text-center">Safety First</h2>
+          <div class="space-y-4 text-gray-700">
+            <p>
+              <strong>We take safety seriously.</strong> All our face paints are:
+            </p>
+            <ul class="space-y-2 ml-6">
+              <li class="flex items-start">
+                <span class="text-primary-pink mr-2">✓</span>
+                Professional-grade, cosmetic quality
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary-pink mr-2">✓</span>
+                Hypoallergenic and dermatologically tested
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary-pink mr-2">✓</span>
+                FDA compliant and safe for sensitive skin
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary-pink mr-2">✓</span>
+                Water-based and easy to remove
+              </li>
+              <li class="flex items-start">
+                <span class="text-primary-pink mr-2">✓</span>
+                Non-toxic and cruelty-free
+              </li>
+            </ul>
+            <p class="mt-4">
+              We maintain the highest hygiene standards, using fresh supplies for each event and following 
+              strict sanitation protocols.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-16">
+        <h2 class="font-heading text-3xl mb-4">Ready to Work With Us?</h2>
+        <p class="text-gray-600 mb-8">Let's make your event colorful and memorable!</p>
+        <a href="/contact" class="btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

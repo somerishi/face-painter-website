@@ -1,0 +1,25 @@
+{
+  "title": "Emma's 7th Birthday - Unicorn Theme",
+  "description": "A magical unicorn-themed birthday party with glittery designs and rainbow colors for 20 excited kids!",
+  "category": "kids-parties",
+  "coverImage": "/images/gallery/unicorn-party-cover.jpg",
+  "images": [
+    {
+      "url": "/images/gallery/unicorn-1.jpg",
+      "alt": "Girl with unicorn face paint featuring rainbow mane",
+      "caption": "Classic unicorn with rainbow mane"
+    },
+    {
+      "url": "/images/gallery/unicorn-2.jpg",
+      "alt": "Boy with dragon face paint",
+      "caption": "Birthday boy requested a dragon instead!"
+    },
+    {
+      "url": "/images/gallery/unicorn-3.jpg",
+      "alt": "Butterfly design with glitter",
+      "caption": "Butterfly princess with extra glitter"
+    }
+  ],
+  "date": "2024-03-15",
+  "featured": true
+}

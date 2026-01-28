@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact - Rainbow Faces">
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <h1 class="font-display text-5xl md:text-6xl text-center gradient-text mb-4">Get in Touch</h1>
+      <p class="text-center text-gray-600 mb-12 text-lg max-w-2xl mx-auto">
+        Ready to book your event? Fill out the form below and we'll get back to you within 24 hours!
+      </p>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div class="card p-8">
+            <h2 class="font-heading text-2xl mb-6">Send Us a Message</h2>
+            
+            <form 
+              name="contact" 
+              method="POST" 
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              class="space-y-6"
+            >
+              <!-- Hidden fields for Netlify -->
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden">
+                <label>
+                  Don't fill this out if you're human: <input name="bot-field" />
+                </label>
+              </p>
+
+              <div>
+                <label for="name" class="block font-heading font-semibold mb-2">Name *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-pink focus:outline-none transition-colors"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block font-heading font-semibold mb-2">Email *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-pink focus:outline-none transition-colors"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div>
+                <label for="phone" class="block font-heading font-semibold mb-2">Phone</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone"
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-pink focus:outline-none transition-colors"
+                  placeholder="Your phone number"
+                />
+              </div>
+
+              <div>
+                <label for="event-type" class="block font-heading font-semibold mb-2">Event Type *</label>
+                <select 
+                  id="event-type" 
+                  name="event-type" 
+                  required
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-pink focus:outline-none transition-colors"
+                >
+                  <option value="">Select event type</option>
+                  <option value="birthday-party">Birthday Party</option>
+                  <option value="corporate-event">Corporate Event</option>
+                  <option value="festival">Festival</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="date" class="block font-heading font-semibold mb-2">Preferred Date</label>
+                <input 
+                  type="date" 
+                  id="date" 
+                  name="date"
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-pink focus:outline-none transition-colors"
+                />
+              </div>
+
+              <div>
+                <label for="guests" class="block font-heading font-semibold mb-2">Number of Guests</label>
+                <input 
+                  type="number" 
+                  id="guests" 
+                  name="guests"
+                  min="1"
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-pink focus:outline-none transition-colors"
+                  placeholder="Estimated number"
+                />
+              </div>
+
+              <div>
+                <label for="message" class="block font-heading font-semibold mb-2">Message *</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  required
+                  rows="5"
+                  class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-pink focus:outline-none transition-colors resize-none"
+                  placeholder="Tell us about your event..."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary w-full">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="space-y-8">
+            <div class="card p-8">
+              <h3 class="font-heading text-2xl mb-4 gradient-text">Contact Information</h3>
+              
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 text-primary-pink mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                  <div>
+                    <p class="font-semibold">Email</p>
+                    <a href="mailto:info@rainbowfaces.com" class="text-primary-pink hover:underline">info@rainbowfaces.com</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 text-primary-pink mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                  <div>
+                    <p class="font-semibold">Phone</p>
+                    <a href="tel:+441234567890" class="text-primary-pink hover:underline">+44 1234 567890</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 text-primary-pink mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                  <div>
+                    <p class="font-semibold">Location</p>
+                    <p class="text-gray-600">London, UK</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card p-8 bg-gradient-to-br from-primary-pink/10 via-primary-purple/10 to-primary-blue/10">
+              <h3 class="font-heading text-xl mb-4">Why Choose Us?</h3>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-primary-pink mr-2">✓</span>
+                  Professional and experienced artists
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary-pink mr-2">✓</span>
+                  Safe, hypoallergenic paints
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary-pink mr-2">✓</span>
+                  Flexible packages for any event size
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary-pink mr-2">✓</span>
+                  Quick response times
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary-pink mr-2">✓</span>
+                  Satisfaction guaranteed
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

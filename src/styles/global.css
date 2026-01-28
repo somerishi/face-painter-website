@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Righteous&family=Nunito:wght@300;400;600;700&display=swap');
+  
+  body {
+    @apply font-body text-dark bg-light;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 font-heading font-bold text-white bg-gradient-to-r from-primary-pink to-primary-purple rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-2 font-heading font-semibold text-dark border-2 border-primary-pink rounded-full hover:bg-primary-pink hover:text-white transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden;
+  }
+  
+  .section-title {
+    @apply font-display text-4xl md:text-5xl text-center mb-4;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-pink via-primary-purple to-primary-blue bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+}
