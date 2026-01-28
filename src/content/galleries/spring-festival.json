@@ -2,7 +2,7 @@
   "title": "Spring Festival Face Painting",
   "description": "Two days of nonstop creativity at the local spring festival, painting over 200 faces with flowers, butterflies, and spring themes.",
   "category": "festivals",
-  "coverImage": "/images/uploads/screenshot-2026-01-28-at-11.00.00 pm.png",
+  "coverImage": "screenshot-2026-01-28-at-11.00.00 pm.png",
   "images": [
     {
       "url": "/images/gallery/festival-1.jpg",
@@ -18,10 +18,6 @@
       "url": "/images/gallery/festival-3.jpg",
       "alt": "Group photo of painted children",
       "caption": "Happy festival-goers showing off their designs"
-    },
-    {
-      "url": "/images/uploads/screenshot-2026-01-28-at-11.00.00 pm.png",
-      "alt": "face painting"
     }
   ],
   "date": "2024-04-20",
